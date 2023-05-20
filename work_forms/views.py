@@ -35,4 +35,7 @@ def get_people_form(request):
             form1.save()
     return render(request, 'forms_page.html', context)
 
+def get_anything(request):
+    pass
+
 

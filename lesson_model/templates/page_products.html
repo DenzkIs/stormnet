@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Продукты</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<header>
+    <h1>Привет, ты в разделе продуктов!!</h1>
+</header>
+<nav>
+    <ul>
+        <li><a href="{% url 'all' %}">Все товары</a></li>
+        {% for cat in categories %}
+            <li><a href="{% url 'category' cat.id %}">{{ cat.name }}</a></li>
+        {% endfor %}
+        <li><a href="{% url 'admin:index' %}" style="color: red">Admin</a></li>
+        <li><a href="{% url 'add_product' %}">Добавить продукт</a></li>
+    </ul>
+</nav>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="text" placeholder="Введи логин" name="login"><br>
+    <input type="password" placeholder="Введи пароль" name="password"><br>
+    <button>Войти</button>
+</form>
+{% if messages %}
+
+    {% for message in messages %}
+        {{ message }}
+    {% endfor %}
+
+{% endif %}
+
+    {{ pers.login }}
+
+<main>
+    {% for prod in products %}
+        <div class="card">
+            <img src="{{ prod.image.url }}" alt="" style="width: 240px">
+            <p>{{ prod.title }}</p>
+            <p>{{ prod.description }}</p>
+            <p>{{ prod.price }}</p>
+        </div>
+    {% endfor %}
+</main>
+</body>
+</html>

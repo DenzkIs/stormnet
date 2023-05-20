@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WORKE-FORMS</title>
+    <link rel="stylesheet" href="{% static 'css/forms.css' %}">
+</head>
+<body>
+
+<div class="container">
+
+    <section class="part_forms">
+        <h1 style="margin: 20px auto;color: #071eea">Урок по работе с ФОРМАМИ DJANGO</h1>
+        <h3>1 Форма HTML:</h3>
+
+        <form action="" method="post">
+            <strong>form action="" когда пустой то отправляем на тот же url, что и отдал эту страницу </strong><br>
+            <strong style="color: darkred">
+                url ,браузер http://127.0.0.1:8000/forms/ <br>
+                urls.py path('', get_page_all_forms, name="forms_page")
+            </strong>
+            {% csrf_token %}
+            <input type="text" placeholder="Введите имя">
+
+            <input type="tel" placeholder="Введите номер телефона">
+            <input type="email" placeholder="Введите почту">
+            <input type="file">
+            <button>ok</button>
+
+        </form>
+
+        <h3>2 Форма class Form:</h3>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {% for f in form %}
+                <p>{{ f }}</p><br><span style="color: red">{{ f.errors.as_text }}</span>
+            {% endfor %}
+            <button name="car_form">ok</button>
+        </form>
+
+        <h3>3 Форма class ModelForm:</h3>
+        <form action="{% url 'people_form' %}" method="POST">
+            {% csrf_token %}
+            {% for f in form1 %}
+                {{ f }}
+            {% endfor %}
+            <button>ok</button>
+        </form>
+    </section>
+</div>
+</body>
+</html>

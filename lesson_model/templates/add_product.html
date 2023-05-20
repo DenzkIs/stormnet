@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Новый продукт</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<header>
+    <h1>Здесь можно добавить новый продукт</h1>
+</header>
+<nav>
+    <ul>
+        <li><a href="{% url 'all' %}">Все товары</a></li>
+        {% for cat in categories %}
+            <li><a href="{% url 'category' cat.id %}">{{ cat.name }}</a></li>
+        {% endfor %}
+        <li><a href="{% url 'admin:index' %}" style="color: red">Admin</a></li>
+        <li><a href="{% url 'add_product' %}">Добавить продукт</a></li>
+    </ul>
+</nav>
+<main>
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="text" placeholder="Название" name="title"><br>
+    <textarea rows="5" cols="30" placeholder="Описание" name="description"></textarea><br>
+    <input type="text" placeholder="Цена" name="price"><br>
+    <input type="file" placeholder="Фото" name="image"><br>
+    {% for cat in categories %}
+        <label>
+            <input type="radio" name="categories" value="{{ cat.id }}">
+            {{ cat.name }}
+        </label><br>
+    {% endfor %}
+    <button>Готово</button><br>
+    {% if messages %}
+
+        {% for message in messages %}
+            {{ message }}
+        {% endfor %}
+
+    {% endif %}
+</form>
+
+</main>
+</body>
+</html>

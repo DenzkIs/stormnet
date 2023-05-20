@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOME FORMS</title>
+    <link rel="stylesheet" href="{% static 'css/forms2.css' %}">
+</head>
+<body>
+
+<div class="container">
+    <h1>MANY DIFFERENT FORMS HERE</h1>
+    <section class="part_forms">
+        <form action="" method="POST">
+            {% csrf_token %}
+                {{ form.as_p }}
+            <button>Send</button>
+        </form>
+    </section>
+</div>
+
+</body>
+</html>

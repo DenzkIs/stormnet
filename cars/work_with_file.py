@@ -1,0 +1,10 @@
+f = open('numbers.txt', 'r')
+numbs = f.read()
+# print(numbs)
+lst = numbs.split()
+# print(lst)
+new_f = open('numbers_plus.txt', 'w')
+for i in lst:
+    new_f.write(f"{i} - {input('Enter name: ')}\n")
+f.close()
+new_f.close()

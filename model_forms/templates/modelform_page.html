@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WORKE-FORMS</title>
+    <link rel="stylesheet" href="{% static 'css/forms.css' %}">
+</head>
+<body>
+
+<div class="container">
+
+    <section class="part_forms">
+        <h1 style="margin: 20px auto;color: #071eea">Урок по работе с ФОРМАМИ DJANGO</h1>
+        <h3>3 Форма class ModelForm:</h3>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {% for f in form %}
+                {{ f }}<br><span style="color: red">{{ f.errors.as_text }}</span>
+            {% endfor %}
+            {{ count }}
+            <button>ok</button>
+        </form>
+    </section>
+</div>
+</body>
+</html>

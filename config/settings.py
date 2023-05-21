@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'lesson_model',
     'work_forms',
     'home_forms',
+    'model_forms',
 
 ]
 
@@ -111,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Minsk'
 
 USE_I18N = True
 

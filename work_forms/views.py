@@ -20,7 +20,7 @@ def get_page_all_forms(request):
             # form = CarForm(form.cleaned_data)
             context = {'form': form}
             # ^ отдаем в context форму, связанную с данными (в т.ч. ошибками)
-    return render(request, 'forms_page.html', context)
+    return render(request, 'modelform_page.html', context)
 
 
 def get_people_form(request):
@@ -33,9 +33,8 @@ def get_people_form(request):
         if form1.is_valid():
             print(form1.cleaned_data)
             form1.save()
-    return render(request, 'forms_page.html', context)
+    return render(request, 'modelform_page.html', context)
+
 
 def get_anything(request):
     pass
-
-

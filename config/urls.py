@@ -9,6 +9,7 @@ urlpatterns = [
     path('products/', include('lesson_model.urls')),
     path('forms/', include('work_forms.urls')),
     path('forms2/', include('home_forms.urls')),
+    path('forms3/', include('model_forms.urls')),
 
 ]
 if settings.DEBUG:

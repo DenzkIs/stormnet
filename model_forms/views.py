@@ -23,7 +23,7 @@ def get_model_form(request):
                 s.save()
             else:
                 print(Session.objects.get(session_id=session_id))
-                s = Session.objects.get(session_id=session_id)#.update(count=F("count") + 1)
+                s = Session.objects.get(session_id=session_id)
                 print(s.__dict__)
                 s.count += 1
                 s.save()

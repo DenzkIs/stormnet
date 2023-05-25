@@ -18,7 +18,3 @@ class Session(models.Model):
 
     def __str__(self):
         return self.session_id
-
-    @property
-    def time_control(self):
-        pass

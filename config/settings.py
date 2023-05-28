@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'work_forms',
     'home_forms',
     'model_forms',
+    'less_auth',
 
 ]
 

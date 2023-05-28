@@ -10,6 +10,7 @@ urlpatterns = [
     path('forms/', include('work_forms.urls')),
     path('forms2/', include('home_forms.urls')),
     path('forms3/', include('model_forms.urls')),
+    path('my_less_login/', include('less_auth.urls')),
 
 ]
 if settings.DEBUG:

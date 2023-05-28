@@ -6,21 +6,24 @@ from .models import Info
 
 class InfoForm(forms.ModelForm):
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        # print(self.fields.get('name').__dict__)
-
     class Meta:
         model = Info
-        fields = '__all__'
+        fields = ("name", "surname", "age")
         widgets = {
-            'name': forms.TextInput(attrs={"placeholder": "Имя"}),
+            'name': forms.TextInput(attrs={"placeholder": "И"}),
             'surname': forms.TextInput(attrs={"placeholder": "Фамилия"}),
             'age': forms.TextInput(attrs={"placeholder": "Возраст"}),
         }
 
     def clean_age(self):
+        print(self.cleaned_data)
         age = self.cleaned_data.get('age')
         if age < 18:
             raise ValidationError("Еще слишком мал")
         return age
+
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        if not name.isalpha():
+            raise ValidationError("Только текст")
+        return name

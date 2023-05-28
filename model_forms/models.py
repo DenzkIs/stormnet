@@ -3,8 +3,8 @@ from django.db import models
 
 # Create your models here.
 class Info(models.Model):
-    name = models.CharField(max_length=100, verbose_name="First name")
-    surname = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, verbose_name="First name", unique=True)
+    surname = models.CharField(max_length=100, verbose_name="Фамилия")
     age = models.IntegerField()
 
     def __str__(self):

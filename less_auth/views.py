@@ -15,10 +15,12 @@ def login_my(request):
         if user is not None:
             login(request, user)
         else:
-            context = {'cannot_find_user': 'Ты что-то не правильно ввел, '
-                                           'попробуй еще раз или зарегистрируйся по форме ниже'}
+            context['cannot_find_user'] = \
+                'Ты что-то не правильно ввел, попробуй еще раз или зарегистрируйся по форме ниже'
+
     if request.method == 'POST' and 'logout' in request.POST:
         logout(request)
+    
     if request.method == 'POST' and 'registration' in request.POST:
         form = UserCreationForm(request.POST)
         if form.is_valid():

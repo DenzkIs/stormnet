@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home auth</title>
+</head>
+<body>
+{% if user.is_authenticated %}
+<h3>Ты вошел на сайт как <span style="color: red">{{ user }}</span></h3>
+<form action="{% url 'logout' %}" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Logout">
+</form>
+{% else %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="login">
+    <input type="password" name="password" placeholder="password">
+    <input type="submit" value="Login">
+</form>
+{% endif %}
+
+</body>
+</html>

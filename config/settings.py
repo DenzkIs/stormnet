@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'home_forms',
     'model_forms',
     'less_auth',
+    'home_auth',
 
 ]
 

@@ -7,11 +7,15 @@
 <body>
 <form action="" method="POST" style="padding: 50px">
     {% csrf_token %}
-    <input type="text" placeholder="login" name="username" value="{{ clean_username }}"><br>
-    <input type="password" placeholder="password" name="password1"><span style="color: red">{{ not_equal }}</span><br>
-    <input type="password" placeholder="repeat password" name="password2"><span style="color: red">{{ not_equal }}</span><br>
-    <input type="email" placeholder="e-mail" name="email" value="{{ clean_email }}"><br>
-    <input type="text" placeholder="First name" name="first_name" value="{{ clean_first_name }}"><span style="color: red">{{ too_long }}</span><br>
+    <input type="text" placeholder="login" name="username" value="{{ clean_username }}"><span style="color: red"> {{ not_unique_login }}{{ empty_username }}</span><br>
+    <input type="password" placeholder="password" name="password1"><span style="color: red"> {{ not_equal }}{{ empty_password1 }}</span><br>
+    <input type="password" placeholder="repeat password" name="password2"><span style="color: red"> {{ not_equal }}{{ empty_password2 }}</span><br>
+    <input type="email" placeholder="e-mail" name="email" value="{{ clean_email }}"><span style="color: red"> {{ not_unique_email }}{{ empty_email }}</span><br>
+    <input type="radio" id="yes" name="regex" value="yes" />
+    <label for="yes">Валидируем регуляркой</label><br>
+    <input type="radio" id="no" name="regex" value="no" />
+    <label for="no">Валидируем "костылём"</label><br>
+    <input type="text" placeholder="First name" name="first_name" value="{{ clean_first_name }}"><span style="color: red"> {{ too_long }}{{ empty_firstname }}</span><br>
     <input type="submit" value="Ok"><br>
 </form>
 </body>

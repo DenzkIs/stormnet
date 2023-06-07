@@ -1,6 +1,8 @@
 import re
 from email_validator import validate_email, EmailNotValidError
+
 error = ''
+
 
 def validate_password(password_1, password_2):
     if password_1 == password_2:

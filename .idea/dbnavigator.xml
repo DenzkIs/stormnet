@@ -26,6 +26,8 @@
     <filter-actions connection-id="9fb70edd-ffd3-4f0f-871e-f8a66c5dac14" dataset="main.auth_user" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="9fb70edd-ffd3-4f0f-871e-f8a66c5dac14" dataset="main.django_migrations" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="9fb70edd-ffd3-4f0f-871e-f8a66c5dac14" dataset="main.cars_cars" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="9fb70edd-ffd3-4f0f-871e-f8a66c5dac14" dataset="main.home_auth_model" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="9fb70edd-ffd3-4f0f-871e-f8a66c5dac14" dataset="main.home_forms_examplemodel" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="9fb70edd-ffd3-4f0f-871e-f8a66c5dac14" dataset="main.model_forms_session" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="9fb70edd-ffd3-4f0f-871e-f8a66c5dac14" dataset="main.django_admin_log" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="9fb70edd-ffd3-4f0f-871e-f8a66c5dac14" dataset="main.django_session" active-filter-id="EMPTY_FILTER" />

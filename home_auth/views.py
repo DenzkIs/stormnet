@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from .validators import *
+from .models import UniqSave, errors
 
 
 def get_login(request):
@@ -92,3 +93,12 @@ def get_registration(request):
             return render(request, 'registration.html', context)
 
     return render(request, 'registration.html', context)
+
+
+def get_uniq_reg(request):
+    if request.method == 'POST':
+        print(request.POST)
+        test = UniqSave(name=request.POST.get('name'), count=request.POST.get('count'))
+        test.save()
+        return render(request, 'uniq_reg.html', errors)
+    return render(request, 'uniq_reg.html')

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration form</title>
+</head>
+<body>
+<form action="" method="POST" style="padding: 50px">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="name"><span style="color: red">{{ unique }}</span><br>
+    <input type="number" name="count" placeholder="count"><br>
+    <input type="submit" placeholder="Ok"><br>
+</form>
+</body>
+</html>
